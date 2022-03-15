@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Usuarios{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+    <div class="card" style="height: auto; color: Black;">
+        <div class="card-body">
+        
+                   {{ form_start(form) }}
+    <div class="container col-3 mt-4">
+        <!---heading-->
+        <header class="heading"><h3 class="text-center"> Registro</h3></header><hr></hr>
+        
+        <!---Form starting--> 
+        {{ form_errors(form) }}
+        <div class="container">
+        <!--- For Name-->
+
+        <div class="row">
+            <div class="col-12">
+                {{ form_row(form.nombre) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                {{ form_row(form.apellidos) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                {{ form_row(form.email) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                    {{ form_row(form.password) }}
+            </div>
+        </div>
+
+    <div class="row">
+        <div class="col-12">
+              {{ form_row(form.foto) }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            {{ form_row(form.roles) }}
+        </div>
+    </div>
+</div>	
+
+<!---For Phone number-->
+
+<div class="row">
+    <div class="col-12">	 
+        {{ form_row(form.telefono) }}
+    </div>
+</div>
+   <div class="row">
+        <div class="col-12">
+    {{ form_row(form.registrar, { 'label': 'Registrar' }) }}
+</div>
+</div>
+</div>
+
+
+{{ form_end(form) }}
+         
+        </div>
+    </div>
+{% endblock %}

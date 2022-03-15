@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <body style="color:black; height:auto;background-color: grey;">
+    {{ parent() }}
+    <div class="card" style="color:black; height:auto; background-color: grey;">
+        <div class="card-body">
+            <h4 class="card-title"style="background-color: darkgray;">Incidencia:</h4>
+            <p class="card-text">{{incidencia.titulo}}</p>
+            <h4 class="card-title"style="background-color: darkgray;">Estado:</h4>
+            <p class="card-text">{{incidencia.estado}}</p>
+            <h4 class="card-title"style="background-color: darkgray;">Fecha de la incidencia:</h4>
+            <p class="card-text">{{ incidencia.fechaCreacion|date('d-m-Y h:i:s') }}</p>
+            <a href="/cliente" class="btn btn-primary btn-block" role="button">Volver</a>
+        </div>
+    </div>
+    
+    </body>
+{% endblock %}

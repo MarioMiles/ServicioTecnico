@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Clientes{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+   
+    <h1 style="color:black;">Clientes</h1>
+    {% for cliente in clientes %}
+        <div class="card" style="color:black; height:auto;background-color: darkgray;"">
+            <div class="card-body">
+                <h4 class="card-title">Cliente: {{cliente.nombre}} {{cliente.apellidos}}</h4>
+                <p class="card-text"><a href="{{path('verCliente',{id:cliente.id}) }}">{{ cliente.nombre }}</a>
+                    <a href="{{ path('borrarCliente',{id:cliente.id}) }}" class="btn btn-danger" role="button">Borrar cliente</a></h4>
+                </p>
+            </div>
+        </div><br><br>
+    {% else %}
+        No hay clientes disponibles.
+    {% endfor %}
+    <div style="clear:both"></div>
+    {%  if app.user %}
+        <a href="{{ path('nuevoCliente') }}" class="btn btn-primary" role="button">Insertar cliente</a>
+    {% endif %}
+
+{% endblock %}
